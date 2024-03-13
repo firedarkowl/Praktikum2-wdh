@@ -23,6 +23,9 @@ public class PM2Map<K,V> implements Map<K,V> {
     @Override
     public boolean containsKey(Object key) {
         for(int i = 0; i < paare.length; i++){
+            if(paare[i]==null){
+                return false;
+            }
             if(paare[i].getKey().equals(key)){
                 return true;
             }
@@ -33,6 +36,9 @@ public class PM2Map<K,V> implements Map<K,V> {
     @Override
     public boolean containsValue(Object value) {
         for(int i = 0; i < paare.length; i++){
+            if(paare[i]==null){
+                return false;
+            }
             if(paare[i].getValue().equals(value)){
                 return true;
             }
@@ -52,6 +58,9 @@ public class PM2Map<K,V> implements Map<K,V> {
 
     @Override
     public V put(K key, V value) {
+        if(value == null || key == null){
+            return null;
+        }
         if(paare.length == 0){
             paare = new MapPaar[1];
             paare[0] = new MapPaar<>(key, value);
@@ -81,6 +90,14 @@ public class PM2Map<K,V> implements Map<K,V> {
 
     @Override
     public V remove(Object key) {
+        for(int i = 0; i < paare.length; i++){
+            if(!paare[i].getKey().equals(key)){
+                return null;
+            }
+            if(paare[i].getKey().equals(key)){
+
+            }
+        }
         return null;
     }
 
