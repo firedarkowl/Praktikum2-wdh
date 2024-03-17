@@ -1,6 +1,6 @@
 import java.util.Map;
 
-public class MapPaar <K, V> implements Map.Entry  <K, V>{
+public class MapPaar <K, V> implements Map.Entry<K, V>{
 
     private K key;
     private V value;
